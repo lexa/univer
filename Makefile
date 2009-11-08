@@ -1,5 +1,6 @@
 HEADERS=filter.hpp
 OBJ=main.o filter.o
+CXXFLAGS=-ggdb3 -ansi -W  -pedantic -Wall -Wextra
 
 all:$(OBJ)
-		g++ $(OBJ)  -o main -ansi -W  -pedantic -Wall -Wextra  -O0 -ggdb3 
+		g++ $(OBJ)  -o main  $(CXXFLAGS) 

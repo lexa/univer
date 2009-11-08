@@ -1,13 +1,21 @@
-#define FILTER_TYPE float
+#define FILTER_TYPE double
+#include <string>
 
 #include <iostream>
 #include <boost/numeric/ublas/blas.hpp>
 #include <boost/numeric/ublas/vector.hpp>
 #include <boost/numeric/ublas/io.hpp>
+#include <boost/numeric/ublas/matrix.hpp>
+#include <boost/assign/std/vector.hpp> 
+#include <boost/random.hpp>
+#include <boost/assert.hpp>
+#include <boost/numeric/ublas/io.hpp>
+#include <boost/numeric/ublas/matrix.hpp>
 #include <boost/foreach.hpp>
 
 #include <vector>
-#define MU 0.01
+#define MU 0.03
+//#define sigma 0.99f;//коэф забываний
 
 using namespace boost::numeric::ublas ;
 
@@ -23,4 +31,9 @@ private:
 
 	size_t len;
 	vector <FILTER_TYPE> W, X;
+
+	vector <FILTER_TYPE> G, Y;
+	matrix <FILTER_TYPE> P;
+
+	FILTER_TYPE alpha, e, gamma;
 };
